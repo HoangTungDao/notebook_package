@@ -1,2 +1,2 @@
 # notebook_package
-Packages that used for notebook
+Packages that used for some particular notebooks. 
