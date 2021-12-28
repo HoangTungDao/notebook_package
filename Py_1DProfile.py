@@ -119,6 +119,22 @@ def create_xp_zp_sws(dx, d0, i_slope, len_slope):
     # ------------------------------------------------------------------------
     return xp, zp
 
+def create_outputs(bot_slope, length_slope, outp_depth):
+    import numpy as np
+    # Create output points
+    z_outp = np.array(outp_depth)
+    numb_outp = len(outp_depth)
+    point_numb = np.arange(1, numb_outp+1, 1)
+    # Only consider the profile under still water level
+    x_outp = z_outp / bot_slope[0] - length_slope[0]
+    y_outp = np.zeros(numb_outp)
+    # Print output information
+    for i in range(numb_outp):
+        print(f'Output points P{point_numb[i]} at depth '
+              f'{outp_depth[i]} m has (x, y) = '
+              f'({-x_outp[i]}, {y_outp[i]})\n')
+
+    return x_outp
 
 def wavelength(T, d):
     import numpy as np
