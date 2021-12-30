@@ -85,11 +85,4 @@ def weir_height_calculation(discharge_Q, river_width,
     discharge_q = discharge_Q / river_width
     crit_depth = discharge_q / gravity
     weir_height = initial_wdepth + wdepth_diff_x0 - crit_depth
-    print(f"For the initial parameters of the weir and the river, such as:\
-\n An average width, B = {river_width} (m)\
-\n An average discharge, Q = {discharge_Q} (m\N{superscript three}/s) \
-\n An initial water depth, h = {initial_wdepth} (m)\
-\n A water depth difference at x = 0, z\N{subscript zero} = {wdepth_diff_x0} (m)\
-\nThe critical depth will be {crit_depth:.3f} (m).\
-\nTherefore, the weir height will be {weir_height:.3f} (m)")
     return weir_height, crit_depth
